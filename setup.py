@@ -13,6 +13,7 @@ setup(
     author=__author__,
     author_email=__author_email__,
     description='Data walker (in dot notation style) & filter (Xpath analog) for yaml look data structure',
+    long_description_content_type="text/markdown",
     long_description=long_description,
     install_requires=['PyYAML'],
     classifiers=[
