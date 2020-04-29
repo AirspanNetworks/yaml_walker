@@ -41,11 +41,11 @@ node:
       - id: 0
         name: node1
         type: str
-        value: asfasf
+        value: any value
       - id: 2
         name: node2
         type: str
-        value: 23wefqrq
+        value: any str
         sub_data:
           item: any
           value: four
@@ -61,11 +61,11 @@ with open(file.yaml) as fr:
 
 # YamlDict example
 yaml_dict = api.YamlDict(yaml_data)
-yaml_query = yaml_dict.node.hd_1.data['id>0']
+yaml_result = yaml_dict.node.hd_1.data['id>0']
 
 # YQuery example
-yquery = api.YQuery('yaml_data.node.hd_1.data[id>0]')
-yaml_query = yquery(yaml_data)
+y_query = api.YQuery('yaml_data.node.hd_1.data[id>0]')
+yaml_result = y_query(yaml_data)
 ```
 ```
 shell script
@@ -79,7 +79,7 @@ Result in all cases:
         id: 2
         name: node2
         type: str
-        value: 23wefqrq
+        value: any str
         sub_data:
           item: any
           value: four
