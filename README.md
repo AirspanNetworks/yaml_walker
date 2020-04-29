@@ -8,12 +8,14 @@ Containing 2 main features:
 
 **YQuery**
 
-Allow querying of Yaml file in `Xpath` look alike style
+Allow querying of Yaml file in `Xpath/XQuery` look alike style
+Comfortable when path sub elements not pre-defined
 
 **YamlDict**
 
-Allow operate yamll data with dot notation style with extention 
+Allow operate yaml data with dot notation style with extension 
 to query list items by property value
+Suitable when path to desired sub element are static or well known
 
 **Installation**
 
@@ -58,10 +60,11 @@ with open(file.yaml) as fr:
     yaml_data = yaml.load(fr)
 
 # YamlDict example
-yaml_dict = yaml_data.node.hd_1.data['id>0']
+yaml_dict = api.YamlDict(yaml_data)
+yaml_query = yaml_dict.node.hd_1.data['id>0']
 
 # YQuery example
-yquery = YQuery('yaml_data.node.hd_1.data[id>0]')
+yquery = api.YQuery('yaml_data.node.hd_1.data[id>0]')
 yaml_query = yquery(yaml_data)
 ```
 ```

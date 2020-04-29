@@ -1,4 +1,6 @@
+
 import unittest
+from os.path import normpath
 
 from yaml_walker.__main__ import run_cli, parse
 
@@ -6,7 +8,7 @@ from yaml_walker.__main__ import run_cli, parse
 class Test_Ypath(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls._path = r'.\example.yaml'
+        cls._path = normpath(r'./example.yaml')
 
     def test_simple_ypath(self):
         pattern = 'node.nd_1.data'
