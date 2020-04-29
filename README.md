@@ -60,19 +60,25 @@ with open(file.yaml) as fr:
 # YamlDict example
 yaml_dict = yaml_data.node.hd_1.data['id>0']
 
-
 # YQuery example
 yquery = YQuery('yaml_data.node.hd_1.data[id>0]')
 yaml_query = yquery(yaml_data)
-
-"""Result: {
-            id: 2
-            name: node2
-            type: str
-            value: 23wefqrq
-            sub_data:
-              item: any
-              value: four
-        }"""
 ```
+```
+shell script
 
+python -m yaml_walker 'yaml_data.node.hd_1.data[id>0]' file.yaml
+
+```
+```
+Result in all cases: 
+    {
+        id: 2
+        name: node2
+        type: str
+        value: 23wefqrq
+        sub_data:
+          item: any
+          value: four
+    }
+```
