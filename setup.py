@@ -1,7 +1,8 @@
+from os.path import normpath
 from setuptools import setup, find_packages
 from yaml_walker.version import __version__, __author__, __author_email__, __git_url__
 
-with open(r'.\README.md', 'r') as rm:
+with open(normpath(r'./README.md'), 'r') as rm:
     long_description = rm.read()
 
 setup(
@@ -17,6 +18,7 @@ setup(
     long_description=long_description,
     install_requires=['PyYAML'],
     classifiers=[
+        'Classifier: Operating System :: OS Independent',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
