@@ -7,7 +7,7 @@ Containing 2 main features:
 - YamlDict
 ~~~
 ##YQuery
-Allow quering of Yaml file in `Xpath` look alike style
+Allow querying of Yaml file in `Xpath` look alike style
 
 ##YamlDict
 ~~~
