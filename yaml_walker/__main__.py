@@ -1,7 +1,7 @@
 import sys
 
 import yaml
-from yaml_walker import YQuery, YamlDict
+from yaml_walker.api import YQuery, YamlDict
 
 
 def query(pattern, data):
@@ -24,4 +24,4 @@ def run_cli(argv):
 
 if __name__ == '__main__':
     result = run_cli(sys.argv[1:])
-    print(f"Query result for pattern '{sys.argv[1]}': {result}")
+    print(f"query result for pattern '{sys.argv[1]}': {result}")

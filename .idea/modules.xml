@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/YamlWalkerGit.iml" filepath="$PROJECT_DIR$/.idea/YamlWalkerGit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/yaml_walker.iml" filepath="$PROJECT_DIR$/.idea/yaml_walker.iml" />
     </modules>
   </component>
 </project>

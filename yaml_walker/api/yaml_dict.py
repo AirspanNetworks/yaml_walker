@@ -1,4 +1,4 @@
-from yaml_walker import YQuery
+from yaml_walker.api import YQuery
 
 
 class YamlDict:
