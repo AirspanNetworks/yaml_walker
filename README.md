@@ -15,11 +15,14 @@ Allow operate yaml data with dot notation style with extention
 to query list items by property value
 ~~~
 ###Installation
+
 ####From PIP
+
 [https://pypi.org/project/YamlWalker/]
 ~~~
 pip.exe install YamlWalker
 ~~~
 ####From GitHub
+
 [https://github.com/doguz2509/YamlWalker]
 
