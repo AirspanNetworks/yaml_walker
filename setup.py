@@ -1,13 +1,13 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 with open(r'.\README.md', 'r') as rm:
-    long_description = '\n'.join(rm.readlines())
+    long_description = rm.read()
 
 setup(
     name='YamlWalker',
-    version='1.0.1',
-    packages=['yaml_walker'],
+    version='1.0.3',
+    packages=find_packages(),
     url='https://github.com/doguz2509/YamlWalker',
     license='MIT',
     author='Dmitry Oguz',
@@ -16,12 +16,16 @@ setup(
     long_description=long_description,
     install_requires=['PyYAML'],
     classifiers=[
-        'Programming Language :: Python :: 2.7'
-        'Programming Language :: Python :: 3'
-        'Programming Language :: Python :: 3.5'
-        'Programming Language :: Python :: 3.6'
-        'Programming Language :: Python :: 3.7'
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8'
-        'Programming Language :: Python :: IMPLEMENTATION :: PYPY'
-    ]
+    ],
+    package_data={
+        '': [
+            'unittests/*.yaml'
+        ]
+    }
 )
