@@ -19,7 +19,7 @@ to query list items by property value
 
 *From PIP*
 
-[Link to PYPI] (https://pypi.org/project/YamlWalker/)
+[Link to PYPI] (https://pypi.org/project/yaml_walker/)
 
 ~~~
 pip.exe install YamlWalker
