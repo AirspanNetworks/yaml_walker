@@ -1,9 +1,9 @@
 from setuptools import setup
 
 setup(
-    name='Query',
+    name='YamlWalker',
     version='1.0.0',
-    packages=['yaml_walker', 'yaml_walker.unittests'],
+    packages=['yaml_walker'],
     url='https://github.com/doguz2509/YamlWalker',
     license='MIT',
     author='Dmitry Oguz',
