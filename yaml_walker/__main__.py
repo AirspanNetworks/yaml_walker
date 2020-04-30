@@ -1,8 +1,9 @@
+import json
 import sys
 
 import yaml
 from yaml_walker.api import YQuery, YamlDict
-from yaml_walker.version import __version__
+from yaml_walker import __version__
 
 
 def query(pattern, data):
@@ -28,4 +29,4 @@ if __name__ == '__main__':
         print(f"yaml_walker: {__version__}")
         sys.exit(-1)
     result = run_cli(sys.argv[1:])
-    print(f"query result for pattern '{sys.argv[1]}': {result}")
+    print(json.dumps(result, sort_keys=True, indent=4))
