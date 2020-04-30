@@ -22,15 +22,6 @@ class YamlDict:
     def __getitem__(self, item):
         return self._get_y_query_item(item)
 
-    # def __init__(self, data):
-    #     self._root = self._yaml_node(data)
-    #
-    # def __getattr__(self, item):
-    #     return getattr(self._root, item, None)
-    #
-    # def __getitem__(self, item):
-    #     return self._root[item]
-
     def __enter__(self):
         return self
 

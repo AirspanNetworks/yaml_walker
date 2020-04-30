@@ -2,7 +2,7 @@ from os.path import normpath
 from setuptools import setup, find_packages
 from yaml_walker.version import __version__, __author__, __author_email__, __git_url__
 
-with open(normpath(r'./README.md'), 'r') as rm:
+with open(normpath('README.md'), 'r') as rm:
     long_description = rm.read()
 
 setup(

@@ -2,6 +2,7 @@ import sys
 
 import yaml
 from yaml_walker.api import YQuery, YamlDict
+from yaml_walker.version import __version__
 
 
 def query(pattern, data):
@@ -23,5 +24,8 @@ def run_cli(argv):
 
 
 if __name__ == '__main__':
+    if sys.argv[1] in ['-v', '--version']:
+        print(f"yaml_walker: {__version__}")
+        sys.exit(-1)
     result = run_cli(sys.argv[1:])
     print(f"query result for pattern '{sys.argv[1]}': {result}")
