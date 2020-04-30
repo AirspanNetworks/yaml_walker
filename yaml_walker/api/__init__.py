@@ -1,9 +1,9 @@
-from .query import query as YQuery
-from .yaml_dict import YamlDict
+from .ypath import Ypath
+from .yaml_dict import YDict
 
 
 __all__ = [
-    YQuery.__name__,
-    YamlDict.__name__
+    Ypath.__name__,
+    YDict.__name__
 ]
 

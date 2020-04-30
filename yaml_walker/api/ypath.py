@@ -10,7 +10,7 @@ class YQueryError(KeyError):
     pass
 
 
-class query:
+class Ypath:
     EXPRESION_SEPARATOR = r'([\.|\[\]])+'
     DELIMITERS = ['.', '[', ']']
     DELIMITER_ACTIONS = {
@@ -61,5 +61,5 @@ class query:
 
 if __name__ == '__main__':
     pattern = 'nodes.ENB_+.access_services[name=nms]data'
-    y2 = query(pattern)
+    y2 = Ypath(pattern)
     print(f"{y2}")

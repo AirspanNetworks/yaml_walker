@@ -4,17 +4,17 @@ Provide comfortable interface for operate yaml data
 
 Containing 2 main features:
 * `YQuery`
-* `YamlDict`
+* `YDict`
 
 **YQuery**
 
 Allow querying of Yaml file in `Xpath/XQuery` look alike style
 Comfortable when path sub elements not pre-defined
 
-**YamlDict**
+**YDict**
 
 Allow operate yaml data with dot notation style with extension 
-to query list items by property value
+to Ypath list items by property value
 Suitable when path to desired sub element are static or well known
 
 **Installation**
@@ -59,8 +59,8 @@ from yaml_walker import api
 with open(file.yaml) as fr:
     yaml_data = yaml.load(fr)
 
-# YamlDict example
-yaml_dict = api.YamlDict(yaml_data)
+# YDict example
+yaml_dict = api.YDict(yaml_data)
 yaml_result = yaml_dict.node.hd_1.data['id>0']
 
 # YQuery example
