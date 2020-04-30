@@ -2,7 +2,6 @@ from yaml_walker.api import YQuery
 
 
 class YamlDict:
-    # class _yaml_node:
     def __init__(self, data, item=None):
         self._node = data if item is None else YQuery(item)(data)
 
