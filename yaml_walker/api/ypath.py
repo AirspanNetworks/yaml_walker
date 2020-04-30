@@ -1,9 +1,8 @@
 
 import re
-from copy import deepcopy
 
-from yaml_walker.tools.get_error_info import get_error_info
 from yaml_walker.api.lookup import node_lookup, _lookup_in_list, _lookup_abs
+from yaml_walker.tools.get_error_info import get_error_info
 
 
 class YQueryError(KeyError):
@@ -30,25 +29,21 @@ class Ypath:
 
     def parse(self, path_string: str, re_option=re.IGNORECASE):
         self._base_expression = path_string
-        delimited_pattern = re.split(self.EXPRESION_SEPARATOR, path_string)
-        if delimited_pattern[-1] == '':
-            delimited_pattern.pop()
+        delimited_pattern = [st for st in re.split(self.EXPRESION_SEPARATOR, path_string) if st != '']
 
-        action = None
         for index, item in enumerate(delimited_pattern):
             if item in self.DELIMITERS:
-                # action = self.DELIMITER_ACTIONS[item]
                 continue
-            # action = node_lookup
 
             call_back: _lookup_abs = node_lookup(item)
-            if call_back.shall_be_last_pattern and index < len(list([i for i in delimited_pattern if i not in self.DELIMITER_ACTIONS])):
+            if call_back.shall_be_last_pattern and \
+                    index < len(list([i for i in delimited_pattern if i not in self.DELIMITER_ACTIONS])):
                 raise YQueryError(f"Wrong pattern; Wildcard element must be last one ({path_string})")
             self._node_path.append(call_back)
 
     def __call__(self, data: dict, return_name=False):
         try:
-            _temp_data = deepcopy(data)
+            _temp_data = data
             for cb in self._node_path:
                 _temp_data = cb(_temp_data)
             return _temp_data

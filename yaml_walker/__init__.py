@@ -2,7 +2,7 @@ import yaml_walker.api as api
 from .__main__ import run_cli, parse, query
 
 
-__version__ = '1.0.13'
+__version__ = '1.0.14'
 __author__ = 'Dmitry Oguz'
 __author_email__ = 'doguz2509@gmail.com'
 __git_url__ = r'https://github.com/doguz2509/YamlWalker'
