@@ -1,6 +1,6 @@
 from yaml_walker.api import Ypath
-
-# TODO: Implement YDict as full 'dict' implementation
+import logging
+logger = logging.getLogger(__name__)
 
 
 class YDict:
