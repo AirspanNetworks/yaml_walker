@@ -18,16 +18,16 @@ class Ypath:
         ']': None
     }
 
-    def __init__(self, path_pattern, re_option=re.IGNORECASE, **kwargs):
+    def __init__(self, path_pattern):
         self._node_path = []
         self._base_expression = ''
-        self.parse(path_pattern, re_option)
+        self.parse(path_pattern)
         print("")
 
     def __str__(self):
         return f"{self.__class__.__name__}: {self._base_expression}"
 
-    def parse(self, path_string: str, re_option=re.IGNORECASE):
+    def parse(self, path_string: str):
         self._base_expression = path_string
         delimited_pattern = [st for st in re.split(self.EXPRESION_SEPARATOR, path_string) if st != '']
 

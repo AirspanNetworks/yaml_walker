@@ -3,6 +3,7 @@ import unittest
 from os.path import normpath
 
 from yaml_walker.__main__ import run_cli, parse
+from yaml_walker.api import Ypath
 
 
 class Test_Ypath(unittest.TestCase):
@@ -33,6 +34,32 @@ class Test_Ypath(unittest.TestCase):
     def test_comparer_with_regex(self):
         pattern = 'node.nd_+'
         result = run_cli([pattern, self._path])
+        print(json.dumps(result, sort_keys=True, indent=4))
+
+    def test_custom_list(self):
+        data = [{
+                    'alias': 'login',
+                    'prompt': 'login:',
+                    'command': 'root'
+                },
+                {
+                    'alias': 'password',
+                    'prompt': 'Password:',
+                    'command': 'S-N<&t8{<wu98wCD'
+                },
+                {
+                    'alias': 'shell',
+                    'prompt': '#',
+                    'command': None
+                },
+                {
+                    'alias': 'exit',
+                    'command': 'exit',
+                    'prompt': 'login:'
+                }
+                ]
+        pattern = '[alias=login]'
+        result = Ypath(pattern)(data)
         print(json.dumps(result, sort_keys=True, indent=4))
 
 
