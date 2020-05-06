@@ -7,10 +7,6 @@ class YDict:
     def __init__(self, data: dict, item=None):
         self._node: dict = data if item is None else Ypath(item)(data)
 
-    @property
-    def as_dict(self):
-        return self._node
-
     def _get_y_query_item(self, item):
         if isinstance(item, YDict):
             temp_query = self._node
@@ -26,6 +22,9 @@ class YDict:
 
     def __getitem__(self, item):
         return self._get_y_query_item(item)
+
+    def __dict__(self):
+        return self._node
 
     def __enter__(self):
         return self

@@ -72,25 +72,25 @@ class Test_YDict(unittest.TestCase):
     def test_simple(self):
         result = self.y_dict.node.nd_1.data
         self.assertNotEqual(result, "Empty!!!")
-        print(json.dumps(result.as_dict, sort_keys=True, indent=4))
+        print(json.dumps(result.__dict__(), sort_keys=True, indent=4))
 
     def test_comparer(self):
         y_dict = parse(self._path)
         result = y_dict.node.nd_1.data['id=2']
         self.assertNotEqual(result, "Empty!!!")
-        print(json.dumps(result.as_dict, sort_keys=True, indent=4))
+        print(json.dumps(result.__dict__(), sort_keys=True, indent=4))
 
     def test_comparer_with_gt(self):
         y_dict = parse(self._path)
         result = y_dict.node.nd_1.data['id>2']
         self.assertNotEqual(result, "Empty!!!")
-        print(json.dumps(result.as_dict, sort_keys=True, indent=4))
+        print(json.dumps(result.__dict__(), sort_keys=True, indent=4))
 
     def test_comparer_with_sub_node(self):
         y_dict = parse(self._path)
         result = y_dict.node.nd_1.data['id=2'].sub_data
         self.assertNotEqual(result, "Empty!!!")
-        print(json.dumps(result.as_dict, sort_keys=True, indent=4))
+        print(json.dumps(result.__dict__(), sort_keys=True, indent=4))
 
 
 if __name__ == '__main__':
