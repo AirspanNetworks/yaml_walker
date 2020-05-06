@@ -43,17 +43,9 @@ class Ypath:
             _temp_data = data
             for cb in self._node_path:
                 _temp_data = cb(_temp_data)
-                logger.debug(f"Temp data: {_temp_data}")
-            logger.debug(f"Result data: {_temp_data}")
             return _temp_data
         except KeyError as e:
             raise YQueryError(f"Pattern '{self._base_expression}' error occur element '{e.args[0]}'")
         except Exception as e:
             f, l = get_error_info()
             raise Exception(f"Unexpected error: {e}; File: {f}:{l}")
-
-
-if __name__ == '__main__':
-    pattern = 'nodes.ENB_+.access_services[name=nms]data'
-    y2 = Ypath(pattern)
-    print(f"{y2}")
