@@ -3,10 +3,10 @@ YamlWalker introduction
 Provide comfortable interface for operate yaml data
 
 Containing 2 main features:
-* `YQuery`
+* `YPath`
 * `YDict`
 
-**YQuery**
+**YPath**
 
 Allow querying of Yaml file in `Xpath/XQuery` look alike style
 Comfortable when path sub elements not pre-defined
@@ -64,7 +64,7 @@ yaml_dict = api.YDict(yaml_data)
 yaml_result = yaml_dict.node.hd_1.data['id>0']
 
 # YQuery example
-y_query = api.YQuery('yaml_data.node.hd_1.data[id>0]')
+y_query = api.YPath('yaml_data.node.hd_1.data[id>0]')
 yaml_result = y_query(yaml_data)
 ```
 ```
