@@ -19,7 +19,6 @@ class Ypath:
         self._node_path = []
         self._base_expression = ''
         self.parse(path_pattern)
-        print("")
 
     def __str__(self):
         return f"{self.__class__.__name__}: {self._base_expression}"
@@ -27,7 +26,7 @@ class Ypath:
     def parse(self, path_string: str):
         self._base_expression = path_string
         delimited_pattern = [st for st in re.split(self.EXPRESION_SEPARATOR, path_string) if st != '']
-        logger.debug(f"Pattern: {', '.join(delimited_pattern)}")
+        # logger.debug(f"Pattern: {', '.join(delimited_pattern)}")
         for index, item in enumerate(delimited_pattern):
             if item in self.DELIMITERS:
                 continue

@@ -1,15 +1,16 @@
+
 import re
 
 from yaml_walker.tools.comparer import Comparer
 from yaml_walker.tools.get_error_info import get_error_info
-import logging
-logger = logging.getLogger(__name__)
+# import logging
+# logger = logging.getLogger(__name__)
 
 
 class node_lookup:
     def __init__(self, element):
         self._element = element
-        logger.debug(f"Element: {self._element}")
+        # logger.debug(f"Element: {self._element}")
         assert self._element is not None and self._element != '', "Empty element provided"
         self._wild_card_pattern = re.findall(r'[+|*|?]+', self._element)
 
@@ -60,7 +61,6 @@ class node_lookup:
         except Exception as e:
             f, l = get_error_info()
             raise type(e)(f"{e}; File: {f}:{l}")
-        raise KeyError(self._element)
 
     def __call__(self, data):
         if isinstance(data, dict):

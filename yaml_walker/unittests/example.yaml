@@ -21,6 +21,11 @@ node:
         name: node4
         type: float
         value: 3.4
+        sub_list:
+          - num: 1
+            value: 23234
+          - num: 2
+            value: 45ergwer
   nd_2:
     data:
       - id: 0

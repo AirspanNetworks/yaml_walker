@@ -62,6 +62,11 @@ class Test_Ypath(unittest.TestCase):
         result = Ypath(pattern)(data)
         print(json.dumps(result, sort_keys=True, indent=4))
 
+    def test_list_double(self):
+        pattern ='node.nd_1.data[id==4]sub_list[num=1]value'
+        result = run_cli([pattern, self._path])
+        print(f"Pattern: {pattern}: {json.dumps(result, sort_keys=True, indent=4)}")
+
 
 class Test_YDict(unittest.TestCase):
     @classmethod
