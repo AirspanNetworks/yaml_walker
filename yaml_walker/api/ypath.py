@@ -34,7 +34,8 @@ class Ypath:
             call_back = node_lookup(item)
             if call_back.shall_be_last_pattern and \
                     index < len(list([i for i in delimited_pattern if i not in self.DELIMITERS])):
-                raise YQueryError(f"Wrong pattern; Wildcard element must be last one ({path_string})")
+                raise YQueryError(
+                    f"Wrong pattern; Wildcard element must be last one ({path_string}) [Pattern: {path_string}]")
             self._node_path.append(call_back)
 
     def __call__(self, data: dict, return_name=False):
