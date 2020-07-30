@@ -36,34 +36,39 @@ class Test_Ypath(unittest.TestCase):
         result = run_cli([pattern, self._path])
         print(json.dumps(result, sort_keys=True, indent=4))
 
+    def test_comparer_with_sub_node_after_regex(self):
+        pattern = 'node.nd_+.data'
+        result = run_cli([pattern, self._path])
+        print(json.dumps(result, sort_keys=True, indent=4))
+
     def test_custom_list(self):
         data = [{
-                    'alias': 'login',
-                    'prompt': 'login:',
-                    'command': 'root'
-                },
-                {
-                    'alias': 'password',
-                    'prompt': 'Password:',
-                    'command': 'S-N<&t8{<wu98wCD'
-                },
-                {
-                    'alias': 'shell',
-                    'prompt': '#',
-                    'command': None
-                },
-                {
-                    'alias': 'exit',
-                    'command': 'exit',
-                    'prompt': 'login:'
-                }
-                ]
+            'alias': 'login',
+            'prompt': 'login:',
+            'command': 'root'
+        },
+            {
+                'alias': 'password',
+                'prompt': 'Password:',
+                'command': 'S-N<&t8{<wu98wCD'
+            },
+            {
+                'alias': 'shell',
+                'prompt': '#',
+                'command': None
+            },
+            {
+                'alias': 'exit',
+                'command': 'exit',
+                'prompt': 'login:'
+            }
+        ]
         pattern = '[alias=login]'
         result = Ypath(pattern)(data)
         print(json.dumps(result, sort_keys=True, indent=4))
 
     def test_list_double(self):
-        pattern ='node.nd_1.data[id==4]sub_list[num=1]value'
+        pattern = 'node.nd_1.data[id==4]sub_list[num=1]value'
         result = run_cli([pattern, self._path])
         print(f"Pattern: {pattern}: {json.dumps(result, sort_keys=True, indent=4)}")
 

@@ -1,5 +1,6 @@
 
 import re
+from collections import OrderedDict
 
 from yaml_walker.tools.comparer import Comparer
 from yaml_walker.tools.get_error_info import get_error_info
@@ -29,6 +30,11 @@ class node_lookup:
                 if isinstance(data, dict):
                     assert self._element in data.keys()
                     return data[self._element]
+                    # _res = {}
+                    # for k, v in data.items():
+                    #     if k == self._element:
+                    #         _res[k] = v
+                    # return _res
                 elif isinstance(data, list):
                     _res = []
                     for _elem in data:
